@@ -1,0 +1,138 @@
+{
+  "slug": "llmclear",
+  "box": 76,
+  "date": "2026-10-11",
+  "title": "LLMClear",
+  "question": "How do large language models (LLMs) work?",
+  "hook": "Every chatbot answer is built one guess at a time. Train a real tiny language model on a paragraph about monsoons and chai, watch a tokenizer chop Hindi into bytes, click a word to see what it attends to, and catch the model saying something false with total confidence.",
+  "thumbText": "HOW AN LLM WORKS",
+  "field": "ai",
+  "minutes": 20,
+  "tags": [
+    "LLM",
+    "large language model",
+    "ChatGPT",
+    "GPT",
+    "Claude",
+    "Gemini",
+    "Llama",
+    "language model",
+    "next-token prediction",
+    "n-gram",
+    "Claude Shannon",
+    "temperature",
+    "top-k",
+    "sampling",
+    "tokens",
+    "tokenizer",
+    "byte-pair encoding",
+    "BPE",
+    "UTF-8",
+    "Hindi",
+    "Devanagari",
+    "embeddings",
+    "word vectors",
+    "word2vec",
+    "attention",
+    "transformer",
+    "Attention Is All You Need",
+    "self-attention",
+    "parameters",
+    "pretraining",
+    "fine-tuning",
+    "RLHF",
+    "scaling laws",
+    "hallucination",
+    "AI bias",
+    "AI energy use",
+    "Sarvam",
+    "Krutrim",
+    "BharatGen",
+    "Indian languages",
+    "AI literacy",
+    "three.js"
+  ],
+  "explainer": [
+    {
+      "title": "A machine that guesses the next word",
+      "text": "A language model gives a probability to every possible next piece of text. Pick one, add it, ask again. Our tiny model learns those odds by counting letters in a 2,100-letter text; temperature and top-k decide how boldly it picks."
+    },
+    {
+      "title": "Text becomes tokens",
+      "text": "Models read numbered pieces called tokens, built by byte-pair encoding: start from 256 bytes and keep merging the commonest pair. A Devanagari letter is 3 bytes in UTF-8, so a tokenizer trained mostly on English can need several times more tokens for Hindi."
+    },
+    {
+      "title": "Words become points in space",
+      "text": "Each token is swapped for an embedding, a long list of numbers. Words used in similar company end up close together: chai near coffee, Delhi near Mumbai. The same trick soaks up bias from the text."
+    },
+    {
+      "title": "Attention: words look at words",
+      "text": "In a transformer, every token makes a query, a key and a value. Queries are matched against keys, softmax turns the scores into shares, and each token takes a mix of the others' values. That is how \"it\" finds \"chai\"."
+    },
+    {
+      "title": "Scale, then teaching",
+      "text": "Big models have billions of parameters, trained on trillions of tokens to predict the next one, then tuned on examples and human feedback to be helpful. Compute is about 6 operations per parameter per token, and the energy bill is real."
+    },
+    {
+      "title": "Fluent is not the same as true",
+      "text": "Because they predict likely text, LLMs can state false things with full confidence, repeat bias and sometimes repeat training text. Give context, ask for sources, check what matters, and keep private data out."
+    }
+  ],
+  "concepts": [
+    {
+      "term": "Language model",
+      "def": "A program that gives the probability of each possible next piece of text."
+    },
+    {
+      "term": "Token",
+      "def": "A numbered piece of text, such as a word, part of a word or a byte, that the model reads."
+    },
+    {
+      "term": "Byte-pair encoding",
+      "def": "Building a token vocabulary by merging the most frequent neighbouring pair, again and again."
+    },
+    {
+      "term": "Embedding",
+      "def": "A learned list of numbers that places a token in a space where similar meanings sit close together."
+    },
+    {
+      "term": "Attention",
+      "def": "Each token scores the others with query-key dot products and takes a weighted mix of their values."
+    },
+    {
+      "term": "Transformer",
+      "def": "The 2017 architecture that stacks attention and small neural networks; the basis of modern LLMs."
+    },
+    {
+      "term": "Parameter",
+      "def": "One learned number inside the model; large models have billions."
+    },
+    {
+      "term": "Temperature",
+      "def": "A sampling dial: low picks the likeliest token, high spreads the choice out."
+    },
+    {
+      "term": "Hallucination",
+      "def": "A fluent, confident answer that is false or made up."
+    }
+  ],
+  "links": {},
+  "storage": [
+    {
+      "key": "llmclear.v1",
+      "what": "Which chapters you have opened, your best quiz scores, and sound on or off."
+    }
+  ],
+  "credits": [
+    {
+      "name": "three.js",
+      "license": "MIT",
+      "url": "https://threejs.org"
+    },
+    {
+      "name": "Geist, Instrument Serif",
+      "license": "SIL OFL 1.1",
+      "url": "https://openfontlicense.org"
+    }
+  ]
+}

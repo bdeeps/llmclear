@@ -1,0 +1,126 @@
+{
+  "slug": "llmclear",
+  "box": 76,
+  "question": "How do large language models (LLMs) work?",
+  "url": "https://glassbox-production-fd52.up.railway.app/e/llmclear/",
+  "app": "https://glassbox-production-fd52.up.railway.app/llmclear/",
+  "assets": {
+    "reel": "reel.mp4",
+    "video": "video.mp4",
+    "cover": "cover.jpg",
+    "thumb": "thumb.jpg",
+    "still": "still.jpg",
+    "historyReel": "history-reel.mp4",
+    "historySlides": [
+      "history-slide-1.jpg",
+      "history-slide-2.jpg",
+      "history-slide-3.jpg",
+      "history-slide-4.jpg",
+      "history-slide-5.jpg",
+      "history-slide-6.jpg",
+      "history-slide-7.jpg",
+      "history-slide-8.jpg",
+      "history-slide-9.jpg",
+      "history-slide-10.jpg"
+    ],
+    "slides": [
+      "slide-1.jpg",
+      "slide-2.jpg",
+      "slide-3.jpg",
+      "slide-4.jpg",
+      "slide-5.jpg",
+      "slide-6.jpg",
+      "slide-7.jpg",
+      "slide-8.jpg",
+      "slide-9.jpg",
+      "slide-10.jpg"
+    ]
+  },
+  "captions": {
+    "history": {
+      "instagram": "From Markov counting letters in a poem in 1913 to chatbots used by hundreds of millions: a century of predicting the next word.\n\n1948: Fake English from counts\n1966: ELIZA, the first chatbot\n2013: word2vec: words as points in space\n2014: Attention: look back at the source\n2017: \"Attention Is All You Need\"\n2019: GPT-2 writes convincing paragraphs\n\nThe full story, with 29 moments, sources and charts: glassbox-production-fd52.up.railway.app/e/llmclear/history (link in bio)\n\nThen play with how it works: glassbox-production-fd52.up.railway.app/llmclear\n\n#glassbox #howitworks #explained #learnoninstagram #stem #opensource #llm #largelanguagemodel #chatgpt #gpt #claude #gemini #history",
+      "youtube": {
+        "title": "The history of large language models in 45 seconds #shorts",
+        "description": "From Markov counting letters in a poem in 1913 to chatbots used by hundreds of millions: a century of predicting the next word.\n\n1948 · Fake English from counts (Claude Shannon)\n1966 · ELIZA, the first chatbot (Joseph Weizenbaum)\n2013 · word2vec: words as points in space (Tomas Mikolov and colleagues at Google)\n2014 · Attention: look back at the source (Dzmitry Bahdanau, Kyunghyun Cho and Yoshua Bengio)\n2017 · \"Attention Is All You Need\" (Ashish Vaswani and seven co-authors at Google)\n2019 · GPT-2 writes convincing paragraphs (OpenAI)\n\n▶ Full history: https://glassbox-production-fd52.up.railway.app/e/llmclear/history/\n▶ Play with it: https://glassbox-production-fd52.up.railway.app/e/llmclear/\n\n#glassbox #howitworks #explained #history"
+      }
+    },
+    "instagram": "How do large language models (LLMs) work?\n\nEvery chatbot answer is built one guess at a time. Train a real tiny language model on a paragraph about monsoons and chai, watch a tokenizer chop Hindi into bytes, click a word to see what it attends to, and catch the model saying something false with total confidence.\n\n→ A language model does one thing: it guesses the next piece of text, again and again.\n→ Temperature decides how daring it is: low plays safe, high gets wild.\n→ Models read tokens, not letters. Merging common pairs turns bytes into word pieces.\n→ Hindi letters take 3 bytes each, so English-trained tokenizers often need many more tokens.\n→ Each word becomes a point in space. Words used in similar ways land close together.\n\nPlay with it yourself. It's free and open source: glassbox-production-fd52.up.railway.app/llmclear (link in bio)\n\nBox No. 076 of 365. Follow @glassbox.how for a new \"how it works\" every day.\n\n#glassbox #howitworks #explained #learnoninstagram #stem #opensource #llm #largelanguagemodel #chatgpt #gpt #claude #gemini #llama #languagemodel #nexttokenprediction",
+    "carousel": "Swipe through: How do large language models (LLMs) work?\n\nEvery chatbot answer is built one guess at a time. Train a real tiny language model on a paragraph about monsoons and chai, watch a tokenizer chop Hindi into bytes, click a word to see what it attends to, and catch the model saying something false with total confidence.\n\nSave this for later, then play with the interactive version at glassbox-production-fd52.up.railway.app/llmclear (link in bio).\n\nBox No. 076 · @glassbox.how\n\n#glassbox #howitworks #explained #learnoninstagram #stem #opensource #llm #largelanguagemodel #chatgpt #gpt #claude #gemini",
+    "youtube": {
+      "title": "How do large language models (LLMs) work? #shorts",
+      "description": "Every chatbot answer is built one guess at a time. Train a real tiny language model on a paragraph about monsoons and chai, watch a tokenizer chop Hindi into bytes, click a word to see what it attends to, and catch the model saying something false with total confidence.\n\n▶ Play with it: https://glassbox-production-fd52.up.railway.app/e/llmclear/\n⌘ Source code (MIT): https://github.com/bdeeps/llmclear\n\nBox No. 076 of 365 from Glassbox: one open-source interactive explainer every day.\n\n#glassbox #howitworks #explained"
+    },
+    "youtubeLong": {
+      "title": "How do large language models (LLMs) work? (interactive explainer)",
+      "description": "Every chatbot answer is built one guess at a time. Train a real tiny language model on a paragraph about monsoons and chai, watch a tokenizer chop Hindi into bytes, click a word to see what it attends to, and catch the model saying something false with total confidence.\n\n▶ Play with the interactive version: https://glassbox-production-fd52.up.railway.app/e/llmclear/\n⌘ Source code (MIT): https://github.com/bdeeps/llmclear\n\nIn this video:\n• A machine that guesses the next word. A language model gives a probability to every possible next piece of text.\n• Text becomes tokens. Models read numbered pieces called tokens, built by byte-pair encoding: start from 256 bytes and keep merging the commonest pair.\n• Words become points in space. Each token is swapped for an embedding, a long list of numbers.\n• Attention: words look at words. In a transformer, every token makes a query, a key and a value.\n• Scale, then teaching. Big models have billions of parameters, trained on trillions of tokens to predict the next one, then tuned on examples and human feedback to be helpful.\n• Fluent is not the same as true. Because they predict likely text, LLMs can state false things with full confidence, repeat bias and sometimes repeat training text.\n\nGlassbox opens one box a day: an interactive model of how something works, plus the code behind it.\n\n#glassbox #howitworks #explained #learnoninstagram #stem"
+    },
+    "short": "How do large language models (LLMs) work?\n\nEvery chatbot answer is built one guess at a time.\n\nPlay with it: https://glassbox-production-fd52.up.railway.app/e/llmclear/",
+    "linkedin": "How do large language models (LLMs) work?\n\nEvery chatbot answer is built one guess at a time. Train a real tiny language model on a paragraph about monsoons and chai, watch a tokenizer chop Hindi into bytes, click a word to see what it attends to, and catch the model saying something false with total confidence.\n\n1. A machine that guesses the next word\n2. Text becomes tokens\n3. Words become points in space\n4. Attention: words look at words\n5. Scale, then teaching\n6. Fluent is not the same as true\n\nI built an interactive, open-source explainer so you can pull the levers yourself. It's box No. 076 in my one-a-day project, Glassbox.\n\nTry it: https://glassbox-production-fd52.up.railway.app/e/llmclear/\nCode: https://github.com/bdeeps/llmclear\n\n#glassbox #howitworks #explained #learnoninstagram #stem"
+  },
+  "schedule": {
+    "at": "2026-09-28T13:00:00.000Z"
+  },
+  "targets": [
+    {
+      "service": "instagram",
+      "kind": "reel",
+      "enabled": true
+    },
+    {
+      "service": "instagram",
+      "kind": "carousel",
+      "offsetHours": 4,
+      "enabled": true
+    },
+    {
+      "service": "youtube",
+      "kind": "short",
+      "enabled": true
+    },
+    {
+      "service": "youtube",
+      "kind": "video",
+      "enabled": true
+    },
+    {
+      "service": "linkedin",
+      "kind": "video",
+      "enabled": true
+    },
+    {
+      "service": "twitter",
+      "kind": "video",
+      "enabled": true
+    },
+    {
+      "service": "threads",
+      "kind": "video",
+      "enabled": true
+    },
+    {
+      "service": "tiktok",
+      "kind": "video",
+      "enabled": true
+    },
+    {
+      "service": "instagram",
+      "kind": "history-reel",
+      "offsetHours": 2,
+      "enabled": false
+    },
+    {
+      "service": "youtube",
+      "kind": "history-short",
+      "offsetHours": 2,
+      "enabled": false
+    },
+    {
+      "service": "instagram",
+      "kind": "history-carousel",
+      "offsetHours": 6,
+      "enabled": false
+    }
+  ],
+  "thumbnailOffsetMs": 1200,
+  "updatedAt": "2026-09-28T05:47:56.096Z"
+}

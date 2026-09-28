@@ -1,0 +1,1018 @@
+{
+ "title": "The history of large language models",
+ "tagline": "From Markov counting letters in a poem in 1913 to chatbots used by hundreds of millions: a century of predicting the next word.",
+ "intro": "In 1913 Andrey Markov counted which letters followed which in a Russian poem, and in 1948 Claude Shannon used such counts to generate fake English. For decades the models stayed small. Then words became vectors, attention let networks look back, and the 2017 transformer could be scaled up almost without limit, until ChatGPT put an LLM in everyone's pocket.",
+ "eras": [
+  {
+   "id": "count",
+   "name": "Counting letters and words",
+   "from": 1913,
+   "to": 1989,
+   "color": "#c49bff",
+   "summary": "Mathematicians count which letters and words follow which, and the first chatbot fakes a conversation with simple rules."
+  },
+  {
+   "id": "stats",
+   "name": "Statistics and small networks",
+   "from": 1990,
+   "to": 2012,
+   "color": "#ffb547",
+   "summary": "Translation learns from millions of example sentences, and neural networks start predicting the next word."
+  },
+  {
+   "id": "vectors",
+   "name": "Words as vectors, and attention",
+   "from": 2013,
+   "to": 2016,
+   "color": "#8ef0ff",
+   "summary": "Words become points in space, networks learn to translate whole sentences, and attention lets them look back at the source."
+  },
+  {
+   "id": "transformer",
+   "name": "The transformer and scale",
+   "from": 2017,
+   "to": 2021,
+   "color": "#7be08c",
+   "summary": "One architecture, built on attention, is scaled from millions to hundreds of billions of parameters."
+  },
+  {
+   "id": "chat",
+   "name": "Chatbots for everyone",
+   "from": 2022,
+   "to": 2026,
+   "color": "#ffd166",
+   "summary": "Tuned with human feedback, LLMs reach hundreds of millions of people; open models, Indian-language models and new laws follow."
+  }
+ ],
+ "events": [
+  {
+   "year": 1913,
+   "date": "23 January 1913",
+   "era": "count",
+   "art": "quill",
+   "key": false,
+   "title": "Counting letters in a poem",
+   "who": "Andrey Markov",
+   "where": "St Petersburg, Russia",
+   "country": "Russia",
+   "text": "Markov went through the first 20,000 letters of Pushkin's poem Eugene Onegin, counting how often a vowel followed a vowel or a consonant. He showed that each letter's chance depends on the one before it.",
+   "why": "It was the first chain of probabilities built from real text: the seed of every language model.",
+   "box": "next",
+   "sources": [
+    0,
+    1
+   ]
+  },
+  {
+   "year": 1948,
+   "date": "July 1948",
+   "era": "count",
+   "art": "sinewave",
+   "key": true,
+   "title": "Fake English from counts",
+   "who": "Claude Shannon",
+   "where": "Bell Labs, Murray Hill, United States",
+   "country": "United States",
+   "text": "In the paper that founded information theory, Shannon generated text by picking each letter or word according to how often it followed the previous ones. With longer contexts, the nonsense looked more and more like English.",
+   "why": "It is exactly the idea in chapter 1: a model that predicts the next piece from counts.",
+   "box": "next",
+   "sources": [
+    2,
+    4
+   ]
+  },
+  {
+   "year": 1951,
+   "date": "January 1951",
+   "era": "count",
+   "art": "person",
+   "key": false,
+   "title": "People guess the next letter",
+   "who": "Claude Shannon",
+   "where": "Bell Labs, Murray Hill, United States",
+   "country": "United States",
+   "text": "Shannon asked people to guess a hidden text one letter at a time. From how often they guessed right, he estimated that English carries only about 1 bit of information per letter, because so much of it is predictable.",
+   "why": "It showed how much of language can be predicted from what came before.",
+   "box": "next",
+   "sources": [
+    3
+   ]
+  },
+  {
+   "year": 1966,
+   "date": "January 1966",
+   "era": "count",
+   "art": "computer",
+   "key": true,
+   "title": "ELIZA, the first chatbot",
+   "who": "Joseph Weizenbaum",
+   "where": "MIT, Cambridge, United States",
+   "country": "United States",
+   "text": "ELIZA matched keywords in what you typed and replied from simple scripts, most famously as a therapist who turned your words into questions. It learned nothing. Yet many users felt understood, which alarmed its creator.",
+   "why": "The \"ELIZA effect\", trusting fluent text too much, is still the key caution with LLMs.",
+   "box": "use",
+   "sources": [
+    5,
+    6
+   ]
+  },
+  {
+   "year": 1972,
+   "date": "1972",
+   "era": "count",
+   "art": "scroll",
+   "key": false,
+   "title": "Weighing words by how rare they are",
+   "who": "Karen Spärck Jones",
+   "where": "University of Cambridge, United Kingdom",
+   "country": "United Kingdom",
+   "text": "Spärck Jones proposed giving rare words more weight than common ones when matching documents to a search, an idea now called inverse document frequency.",
+   "why": "Her statistical view of words underpins search engines and fed into later word vectors.",
+   "box": "",
+   "sources": [
+    7
+   ]
+  },
+  {
+   "year": 1990,
+   "date": "June 1990",
+   "era": "stats",
+   "art": "word",
+   "key": false,
+   "title": "Translation learned from examples",
+   "who": "Peter Brown, Robert Mercer and colleagues at IBM",
+   "where": "Yorktown Heights, United States",
+   "country": "United States",
+   "text": "IBM's team translated French to English using statistics learned from Canadian parliament records in both languages, with no hand-written grammar. A language model scored how natural each English sentence was.",
+   "why": "Statistical translation proved that learning from lots of text could beat rules.",
+   "box": "",
+   "sources": [
+    8,
+    9
+   ]
+  },
+  {
+   "year": 1997,
+   "date": "1997",
+   "era": "stats",
+   "art": "neuralnet",
+   "key": false,
+   "title": "Networks with a longer memory",
+   "who": "Sepp Hochreiter and Jürgen Schmidhuber",
+   "where": "Munich, Germany",
+   "country": "Germany",
+   "text": "The long short-term memory (LSTM) network added gates that let a network keep information over many steps. Two decades later, LSTMs powered speech recognition and translation on phones.",
+   "why": "It let networks read sequences, the job transformers later took over.",
+   "box": "",
+   "sources": [
+    10
+   ]
+  },
+  {
+   "year": 2003,
+   "date": "2003",
+   "era": "stats",
+   "art": "neuralnet",
+   "key": false,
+   "title": "A neural network predicts the next word",
+   "who": "Yoshua Bengio and colleagues",
+   "where": "Université de Montréal, Canada",
+   "country": "Canada",
+   "text": "Bengio's team trained a neural network to predict the next word, learning a vector for every word along the way. Similar words got similar vectors, so the model could handle sentences it had never seen.",
+   "why": "Next-word prediction plus learned word vectors is the recipe LLMs still follow.",
+   "box": "embed",
+   "sources": [
+    11
+   ]
+  },
+  {
+   "year": 2006,
+   "date": "April 2006",
+   "era": "stats",
+   "art": "earth",
+   "key": false,
+   "title": "Statistical translation for everyone",
+   "who": "Google",
+   "where": "Mountain View, United States",
+   "country": "United States",
+   "text": "Google Translate launched using statistical machine translation, trained on huge collections of translated documents from the United Nations and the European Parliament. It moved to neural networks in 2016.",
+   "why": "Millions of people began using language models every day without knowing it.",
+   "box": "",
+   "sources": [
+    12
+   ]
+  },
+  {
+   "year": 2013,
+   "date": "January 2013",
+   "era": "vectors",
+   "art": "orbit",
+   "key": true,
+   "title": "word2vec: words as points in space",
+   "who": "Tomas Mikolov and colleagues at Google",
+   "where": "Mountain View, United States",
+   "country": "United States",
+   "text": "word2vec learned word vectors quickly from billions of words. Famously, king − man + woman landed near queen. Later studies found such sums work less neatly than the headlines said, and that the vectors carry social biases.",
+   "why": "Embeddings became the standard first layer of every language model.",
+   "box": "embed",
+   "sources": [
+    13,
+    14
+   ]
+  },
+  {
+   "year": 2014,
+   "date": "September 2014",
+   "era": "vectors",
+   "art": "llm",
+   "key": false,
+   "title": "Sequence to sequence",
+   "who": "Ilya Sutskever, Oriol Vinyals and Quoc Le",
+   "where": "Google, Mountain View, United States",
+   "country": "United States",
+   "text": "An LSTM read a whole sentence into one vector, and a second LSTM wrote the translation from it. It worked surprisingly well, but long sentences were hard to squeeze into one vector.",
+   "why": "It showed that one network could learn to map any text to any text.",
+   "box": "",
+   "sources": [
+    15
+   ]
+  },
+  {
+   "year": 2014,
+   "date": "September 2014",
+   "era": "vectors",
+   "art": "eye",
+   "key": true,
+   "title": "Attention: look back at the source",
+   "who": "Dzmitry Bahdanau, Kyunghyun Cho and Yoshua Bengio",
+   "where": "Université de Montréal, Canada",
+   "country": "Canada",
+   "text": "Instead of one squeezed vector, the translator learned to look back at the most relevant source words for each word it wrote. The paper was presented at ICLR in 2015.",
+   "why": "Attention solved the long-sentence problem and became the heart of the transformer.",
+   "box": "attention",
+   "sources": [
+    16
+   ]
+  },
+  {
+   "year": 2015,
+   "date": "August 2015",
+   "era": "vectors",
+   "art": "block",
+   "key": false,
+   "title": "Byte-pair encoding for words",
+   "who": "Rico Sennrich, Barry Haddow and Alexandra Birch",
+   "where": "University of Edinburgh, United Kingdom",
+   "country": "United Kingdom",
+   "text": "The team borrowed a 1994 compression trick, byte-pair encoding, to split rare words into common pieces for translation. Published at ACL in 2016, it became how most LLMs make their tokens.",
+   "why": "Subword tokens let models handle any word, even ones they never saw.",
+   "box": "tokens",
+   "sources": [
+    17,
+    48
+   ]
+  },
+  {
+   "year": 2017,
+   "date": "12 June 2017",
+   "era": "transformer",
+   "art": "llm",
+   "key": true,
+   "title": "\"Attention Is All You Need\"",
+   "who": "Ashish Vaswani and seven co-authors at Google",
+   "where": "Mountain View, United States",
+   "country": "United States",
+   "text": "The transformer dropped step-by-step reading and used only attention, so every word could look at every other word at once. It trained much faster on GPUs and beat earlier translators.",
+   "why": "Almost every modern LLM, from GPT to Claude, Gemini and Llama, is a transformer.",
+   "box": "attention",
+   "sources": [
+    18,
+    19
+   ]
+  },
+  {
+   "year": 2017,
+   "date": "June 2017",
+   "era": "transformer",
+   "art": "person",
+   "key": false,
+   "title": "Learning from human preferences",
+   "who": "Paul Christiano, Jan Leike and colleagues",
+   "where": "OpenAI and DeepMind",
+   "country": "United States and United Kingdom",
+   "text": "Researchers trained an agent from people's choices between pairs of short video clips, instead of a written score. This reinforcement learning from human feedback (RLHF) later shaped chatbots.",
+   "why": "It gave builders a way to tune models towards what people actually prefer.",
+   "box": "scale",
+   "sources": [
+    20
+   ]
+  },
+  {
+   "year": 2018,
+   "date": "June 2018",
+   "era": "transformer",
+   "art": "chip",
+   "key": false,
+   "title": "GPT: pretrain, then fine-tune",
+   "who": "Alec Radford and colleagues at OpenAI",
+   "where": "San Francisco, United States",
+   "country": "United States",
+   "text": "OpenAI pretrained a 117-million-parameter transformer on books to predict the next token, then fine-tuned it for tasks. The Generative Pre-trained Transformer was born.",
+   "why": "Pretraining on plain text, then adapting, became the standard recipe.",
+   "box": "scale",
+   "sources": [
+    21
+   ]
+  },
+  {
+   "year": 2018,
+   "date": "October 2018",
+   "era": "transformer",
+   "art": "neuralnet",
+   "key": false,
+   "title": "BERT reads in both directions",
+   "who": "Jacob Devlin and colleagues at Google",
+   "where": "Mountain View, United States",
+   "country": "United States",
+   "text": "BERT learned by filling in hidden words using the text on both sides. Fine-tuned, it topped many language tests, and Google began using it in Search in 2019.",
+   "why": "It showed how much pretrained transformers knew about language.",
+   "box": "",
+   "sources": [
+    22
+   ]
+  },
+  {
+   "year": 2019,
+   "date": "14 February 2019",
+   "era": "transformer",
+   "art": "llm",
+   "key": true,
+   "title": "GPT-2 writes convincing paragraphs",
+   "who": "OpenAI",
+   "where": "San Francisco, United States",
+   "country": "United States",
+   "text": "GPT-2, with 1.5 billion parameters, wrote fluent paragraphs from a one-line prompt. OpenAI first released only smaller versions, citing possible misuse, and published the full model in November 2019.",
+   "why": "It started the public debate about what fluent machine text could be used for.",
+   "box": "scale",
+   "sources": [
+    23
+   ]
+  },
+  {
+   "year": 2020,
+   "date": "28 May 2020",
+   "era": "transformer",
+   "art": "llm",
+   "key": true,
+   "title": "GPT-3 and learning from examples in the prompt",
+   "who": "Tom Brown and colleagues at OpenAI",
+   "where": "San Francisco, United States",
+   "country": "United States",
+   "text": "GPT-3 had 175 billion parameters and was trained on about 300 billion tokens. Given a few examples in the prompt, it could do new tasks with no extra training. The same year, OpenAI researchers reported smooth \"scaling laws\" for size, data and compute.",
+   "why": "Scale itself became the strategy, and so did its cost in chips and energy.",
+   "box": "scale",
+   "sources": [
+    24,
+    25,
+    27
+   ]
+  },
+  {
+   "year": 2021,
+   "date": "March 2021",
+   "era": "transformer",
+   "art": "scales",
+   "key": false,
+   "title": "\"Stochastic parrots\": the risks of scale",
+   "who": "Emily M. Bender, Timnit Gebru, Angelina McMillan-Major and Margaret Mitchell",
+   "where": "FAccT conference",
+   "country": "United States",
+   "text": "This paper argued that ever-bigger language models carry costs: energy use, biased and hard-to-audit training data, and fluent text that people may wrongly trust. Its publication became part of a public dispute at Google.",
+   "why": "It put bias, energy and over-trust at the centre of the debate.",
+   "box": "use",
+   "sources": [
+    26
+   ]
+  },
+  {
+   "year": 2022,
+   "date": "March 2022",
+   "era": "chat",
+   "art": "person",
+   "key": false,
+   "title": "Tuning models to follow instructions",
+   "who": "Long Ouyang and colleagues at OpenAI; DeepMind's Chinchilla team",
+   "where": "San Francisco and London",
+   "country": "United States and United Kingdom",
+   "text": "InstructGPT used human-written examples and RLHF to make GPT-3 follow instructions; people preferred a 1.3-billion-parameter tuned model to the raw 175-billion one. The same month, DeepMind's Chinchilla showed models needed far more training text, about 20 tokens per parameter.",
+   "why": "Teaching and data, not only size, turned out to matter.",
+   "box": "scale",
+   "sources": [
+    28,
+    29
+   ]
+  },
+  {
+   "year": 2022,
+   "date": "30 November 2022",
+   "era": "chat",
+   "art": "phone",
+   "key": true,
+   "title": "ChatGPT opens to the public",
+   "who": "OpenAI",
+   "where": "San Francisco, United States",
+   "country": "United States",
+   "text": "OpenAI released ChatGPT as a free research preview. It passed a million users within about five days, and was reported to reach 100 million monthly users by January 2023, one of the fastest-growing apps ever (an analyst estimate).",
+   "why": "LLMs went from research papers to everyday tools for students, workers and families.",
+   "box": "use",
+   "sources": [
+    30,
+    31
+   ]
+  },
+  {
+   "year": 2023,
+   "date": "March 2023",
+   "era": "chat",
+   "art": "chip",
+   "key": false,
+   "title": "A crowded field",
+   "who": "OpenAI, Anthropic, Google",
+   "where": "United States",
+   "country": "United States",
+   "text": "In March 2023 OpenAI released GPT-4, without disclosing its size, and Anthropic released Claude; Google launched Bard, followed by Gemini models in December. Companies began competing on reasoning, safety and cost.",
+   "why": "The largest models also became less open about how they were built.",
+   "box": "",
+   "sources": [
+    35,
+    36,
+    37
+   ]
+  },
+  {
+   "year": 2023,
+   "date": "24 February 2023",
+   "era": "chat",
+   "art": "share",
+   "key": true,
+   "title": "Open-weight models: Llama",
+   "who": "Meta AI",
+   "where": "Menlo Park, United States",
+   "country": "United States",
+   "text": "Meta shared LLaMA's weights with researchers; they leaked online within a week. Llama 2 followed in July 2023 under a licence allowing most commercial use, and thousands of tuned versions appeared, including many for Indian languages.",
+   "why": "Anyone with a good computer could now run, study and adapt a capable LLM.",
+   "box": "",
+   "sources": [
+    32,
+    52,
+    33
+   ]
+  },
+  {
+   "year": 2023,
+   "date": "December 2023",
+   "era": "chat",
+   "art": "word",
+   "key": true,
+   "title": "LLMs for Indian languages",
+   "who": "Sarvam AI, Ola Krutrim, AI4Bharat, NPCI",
+   "where": "Bengaluru and Chennai, India",
+   "country": "India",
+   "text": "Sarvam AI released OpenHathi, a Hindi model built on Llama 2 with AI4Bharat at IIT Madras, and Ola announced its Krutrim models on 15 December. Earlier, in September, NPCI had announced Hello! UPI voice payments using Hindi and English language models.",
+   "why": "India's many languages, often costly to tokenize, got models built with them in mind.",
+   "box": "tokens",
+   "sources": [
+    38,
+    39,
+    40
+   ]
+  },
+  {
+   "year": 2024,
+   "date": "September–October 2024",
+   "era": "chat",
+   "art": "word",
+   "key": false,
+   "title": "BharatGen and Sarvam-1",
+   "who": "Department of Science and Technology, IIT Bombay; Sarvam AI",
+   "where": "New Delhi and Bengaluru, India",
+   "country": "India",
+   "text": "The government launched BharatGen, a publicly funded effort led by IIT Bombay to build multilingual, multimodal models for Indian languages. In October, Sarvam released Sarvam-1, a 2-billion-parameter model for 10 Indian languages and English. In April 2025 the IndiaAI Mission chose Sarvam to build a national model.",
+   "why": "Public money and startups both began building Indian foundation models.",
+   "box": "",
+   "sources": [
+    41,
+    42,
+    43
+   ]
+  },
+  {
+   "year": 2024,
+   "date": "1 August 2024",
+   "era": "chat",
+   "art": "scales",
+   "key": true,
+   "title": "The EU AI Act comes into force",
+   "who": "European Union",
+   "where": "Brussels, Belgium",
+   "country": "European Union",
+   "text": "The world's first broad AI law entered into force, sorting AI uses by risk. Rules for general-purpose models like LLMs apply from August 2025, including transparency about training, with most other rules from August 2026.",
+   "why": "Governments began setting binding rules for how AI is built and used.",
+   "box": "use",
+   "sources": [
+    44,
+    45
+   ]
+  },
+  {
+   "year": 2024,
+   "date": "December 2024",
+   "era": "chat",
+   "art": "chip",
+   "key": false,
+   "title": "Cheaper training, open weights",
+   "who": "DeepSeek",
+   "where": "Hangzhou, China",
+   "country": "China",
+   "text": "DeepSeek-V3 used a mixture of experts: 671 billion parameters in total but only 37 billion used for each token. Its report claimed a much lower training cost than rivals, and its weights were published openly.",
+   "why": "Efficiency, not just size, became a race of its own.",
+   "box": "scale",
+   "sources": [
+    46
+   ]
+  },
+  {
+   "year": 2025,
+   "date": "August 2025",
+   "era": "chat",
+   "art": "plug",
+   "key": false,
+   "title": "Counting the energy of one prompt",
+   "who": "Google",
+   "where": "Mountain View, United States",
+   "country": "United States",
+   "text": "Google reported that a median text prompt to its Gemini app used about 0.24 watt-hours of energy and 0.26 ml of water. Independent estimates for other models vary widely, and total AI electricity demand keeps rising.",
+   "why": "Energy use per answer is small, but billions of answers add up.",
+   "box": "scale",
+   "sources": [
+    47
+   ]
+  }
+ ],
+ "firsts": [
+  {
+   "label": "Probabilities of letters counted from real text",
+   "value": "1913",
+   "who": "Andrey Markov, Russia"
+  },
+  {
+   "label": "Text generated from n-gram counts",
+   "value": "1948",
+   "who": "Claude Shannon, United States"
+  },
+  {
+   "label": "Chatbot",
+   "value": "1966",
+   "who": "ELIZA, Joseph Weizenbaum, United States"
+  },
+  {
+   "label": "Neural network language model with learned word vectors",
+   "value": "2003",
+   "who": "Yoshua Bengio and colleagues, Canada"
+  },
+  {
+   "label": "Transformer",
+   "value": "2017",
+   "who": "Vaswani and colleagues, Google"
+  },
+  {
+   "label": "Hindi LLM from an Indian startup",
+   "value": "2023",
+   "who": "OpenHathi, Sarvam AI with AI4Bharat, India"
+  },
+  {
+   "label": "Broad law regulating AI",
+   "value": "2024",
+   "who": "EU AI Act, European Union"
+  }
+ ],
+ "people": [
+  {
+   "name": "Andrey Markov",
+   "life": "1856 – 1922",
+   "role": "Mathematician",
+   "from": "Russia",
+   "note": "Counted letter sequences in Eugene Onegin in 1913, founding the theory of Markov chains."
+  },
+  {
+   "name": "Claude Shannon",
+   "life": "1916 – 2001",
+   "role": "Engineer and mathematician",
+   "from": "United States",
+   "note": "Founded information theory and generated English-like text from letter and word counts."
+  },
+  {
+   "name": "Joseph Weizenbaum",
+   "life": "1923 – 2008",
+   "role": "Computer scientist",
+   "from": "Germany and United States",
+   "note": "Built ELIZA, then spent decades warning people not to over-trust computers."
+  },
+  {
+   "name": "Karen Spärck Jones",
+   "life": "1935 – 2007",
+   "role": "Computer scientist",
+   "from": "United Kingdom",
+   "note": "Pioneered statistical ways of weighing words that still power search."
+  },
+  {
+   "name": "Yoshua Bengio",
+   "life": "born 1964",
+   "role": "Computer scientist",
+   "from": "Canada",
+   "note": "Built an early neural language model (2003) and co-wrote the 2014 attention paper."
+  },
+  {
+   "name": "Ashish Vaswani",
+   "life": "",
+   "role": "Computer scientist",
+   "from": "India",
+   "note": "Lead author of \"Attention Is All You Need\", the 2017 transformer paper, written with seven co-authors."
+  },
+  {
+   "name": "Timnit Gebru",
+   "life": "",
+   "role": "Computer scientist",
+   "from": "Ethiopia and United States",
+   "note": "Co-wrote the 2021 \"Stochastic Parrots\" paper on the risks of large language models."
+  },
+  {
+   "name": "Mitesh Khapra",
+   "life": "",
+   "role": "Computer scientist, IIT Madras",
+   "from": "India",
+   "note": "A co-founder of AI4Bharat, which builds open datasets and models for Indian languages."
+  }
+ ],
+ "series": [
+  {
+   "id": "params",
+   "title": "Parameters in notable language models (reported)",
+   "unit": "parameters",
+   "log": true,
+   "after": "transformer",
+   "caption": "About a thousandfold growth in five years. Some later models, like GPT-4, did not disclose their size.",
+   "points": [
+    {
+     "year": 2018,
+     "value": 117000000,
+     "label": "GPT-1: 117 million"
+    },
+    {
+     "year": 2018,
+     "value": 340000000,
+     "label": "BERT-Large: 340 million"
+    },
+    {
+     "year": 2019,
+     "value": 1500000000,
+     "label": "GPT-2: 1.5 billion"
+    },
+    {
+     "year": 2019,
+     "value": 11000000000,
+     "label": "T5: 11 billion"
+    },
+    {
+     "year": 2020,
+     "value": 175000000000,
+     "label": "GPT-3: 175 billion"
+    },
+    {
+     "year": 2021,
+     "value": 280000000000,
+     "label": "Gopher: 280 billion"
+    },
+    {
+     "year": 2022,
+     "value": 540000000000,
+     "label": "PaLM: 540 billion"
+    },
+    {
+     "year": 2024,
+     "value": 405000000000,
+     "label": "Llama 3.1: 405 billion"
+    },
+    {
+     "year": 2024,
+     "value": 671000000000,
+     "label": "DeepSeek-V3: 671 billion (37 billion active per token)"
+    }
+   ]
+  },
+  {
+   "id": "tokens",
+   "title": "Training text for notable models (reported)",
+   "unit": "tokens",
+   "log": true,
+   "after": "chat",
+   "caption": "After 2022, builders grew the training text faster than the model size.",
+   "points": [
+    {
+     "year": 2020,
+     "value": 300000000000,
+     "label": "GPT-3: about 300 billion tokens"
+    },
+    {
+     "year": 2022,
+     "value": 1400000000000,
+     "label": "Chinchilla: 1.4 trillion"
+    },
+    {
+     "year": 2023,
+     "value": 2000000000000,
+     "label": "Llama 2: 2 trillion"
+    },
+    {
+     "year": 2024,
+     "value": 15000000000000,
+     "label": "Llama 3.1: over 15 trillion"
+    }
+   ]
+  }
+ ],
+ "facts": [
+  "Shannon estimated that English carries only about 1 bit of information per letter, because most letters can be guessed from what came before.",
+  "Training GPT-3 took about 3.14 × 10²³ arithmetic operations, and was estimated to use about 1,287 MWh of electricity.",
+  "In UTF-8 an English letter takes 1 byte and a Devanagari letter 3, one reason Hindi can cost more tokens.",
+  "ELIZA had no understanding at all, yet its creator's secretary reportedly asked him to leave the room so she could talk to it in private.",
+  "The transformer was invented for translation, not chat."
+ ],
+ "sources": [
+  {
+   "title": "First Links in the Markov Chain",
+   "publisher": "American Scientist (Brian Hayes, 2013)",
+   "url": "https://www.americanscientist.org/article/first-links-in-the-markov-chain"
+  },
+  {
+   "title": "Markov chain",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Markov_chain"
+  },
+  {
+   "title": "A Mathematical Theory of Communication (C. E. Shannon, 1948)",
+   "publisher": "Bell System Technical Journal, via Harvard",
+   "url": "https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf"
+  },
+  {
+   "title": "Prediction and Entropy of Printed English (C. E. Shannon, 1951)",
+   "publisher": "Bell System Technical Journal, via Princeton",
+   "url": "https://www.princeton.edu/~wbialek/rome/refs/shannon_51.pdf"
+  },
+  {
+   "title": "n-gram",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/N-gram"
+  },
+  {
+   "title": "ELIZA: a computer program for the study of natural language communication between man and machine (Weizenbaum, 1966)",
+   "publisher": "Communications of the ACM",
+   "url": "https://dl.acm.org/doi/10.1145/365153.365168"
+  },
+  {
+   "title": "ELIZA",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/ELIZA"
+  },
+  {
+   "title": "Karen Spärck Jones",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Karen_Sp%C3%A4rck_Jones"
+  },
+  {
+   "title": "A Statistical Approach to Machine Translation (Brown et al., 1990)",
+   "publisher": "Computational Linguistics (ACL Anthology)",
+   "url": "https://aclanthology.org/J90-2002/"
+  },
+  {
+   "title": "Statistical machine translation",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Statistical_machine_translation"
+  },
+  {
+   "title": "Long short-term memory",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Long_short-term_memory"
+  },
+  {
+   "title": "A Neural Probabilistic Language Model (Bengio et al., 2003)",
+   "publisher": "Journal of Machine Learning Research",
+   "url": "https://www.jmlr.org/papers/v3/bengio03a.html"
+  },
+  {
+   "title": "Google Translate",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Google_Translate"
+  },
+  {
+   "title": "Efficient Estimation of Word Representations in Vector Space (Mikolov et al., 2013)",
+   "publisher": "arXiv",
+   "url": "https://arxiv.org/abs/1301.3781"
+  },
+  {
+   "title": "Word2vec",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Word2vec"
+  },
+  {
+   "title": "Sequence to Sequence Learning with Neural Networks (Sutskever, Vinyals & Le, 2014)",
+   "publisher": "arXiv",
+   "url": "https://arxiv.org/abs/1409.3215"
+  },
+  {
+   "title": "Neural Machine Translation by Jointly Learning to Align and Translate (Bahdanau, Cho & Bengio, 2014)",
+   "publisher": "arXiv",
+   "url": "https://arxiv.org/abs/1409.0473"
+  },
+  {
+   "title": "Neural Machine Translation of Rare Words with Subword Units (Sennrich, Haddow & Birch, 2016)",
+   "publisher": "ACL Anthology",
+   "url": "https://aclanthology.org/P16-1162/"
+  },
+  {
+   "title": "Attention Is All You Need (Vaswani et al., 2017)",
+   "publisher": "arXiv",
+   "url": "https://arxiv.org/abs/1706.03762"
+  },
+  {
+   "title": "Transformer (deep learning architecture)",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)"
+  },
+  {
+   "title": "Deep reinforcement learning from human preferences (Christiano et al., 2017)",
+   "publisher": "arXiv",
+   "url": "https://arxiv.org/abs/1706.03741"
+  },
+  {
+   "title": "Improving Language Understanding by Generative Pre-Training (Radford et al., 2018)",
+   "publisher": "OpenAI",
+   "url": "https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf"
+  },
+  {
+   "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (Devlin et al., 2018)",
+   "publisher": "arXiv",
+   "url": "https://arxiv.org/abs/1810.04805"
+  },
+  {
+   "title": "Better language models and their implications",
+   "publisher": "OpenAI",
+   "url": "https://openai.com/index/better-language-models/"
+  },
+  {
+   "title": "Language Models are Few-Shot Learners (Brown et al., 2020)",
+   "publisher": "arXiv",
+   "url": "https://arxiv.org/abs/2005.14165"
+  },
+  {
+   "title": "Scaling Laws for Neural Language Models (Kaplan et al., 2020)",
+   "publisher": "arXiv",
+   "url": "https://arxiv.org/abs/2001.08361"
+  },
+  {
+   "title": "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? (Bender, Gebru et al., 2021)",
+   "publisher": "ACM FAccT",
+   "url": "https://dl.acm.org/doi/10.1145/3442188.3445922"
+  },
+  {
+   "title": "Carbon Emissions and Large Neural Network Training (Patterson et al., 2021)",
+   "publisher": "arXiv",
+   "url": "https://arxiv.org/abs/2104.10350"
+  },
+  {
+   "title": "Training language models to follow instructions with human feedback (Ouyang et al., 2022)",
+   "publisher": "arXiv",
+   "url": "https://arxiv.org/abs/2203.02155"
+  },
+  {
+   "title": "Training Compute-Optimal Large Language Models (Hoffmann et al., 2022)",
+   "publisher": "arXiv",
+   "url": "https://arxiv.org/abs/2203.15556"
+  },
+  {
+   "title": "Introducing ChatGPT",
+   "publisher": "OpenAI",
+   "url": "https://openai.com/index/chatgpt/"
+  },
+  {
+   "title": "ChatGPT",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/ChatGPT"
+  },
+  {
+   "title": "LLaMA: Open and Efficient Foundation Language Models (Touvron et al., 2023)",
+   "publisher": "arXiv",
+   "url": "https://arxiv.org/abs/2302.13971"
+  },
+  {
+   "title": "Llama (language model)",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Llama_(language_model)"
+  },
+  {
+   "title": "Introducing Llama 3.1: Our most capable models to date",
+   "publisher": "Meta AI",
+   "url": "https://ai.meta.com/blog/meta-llama-3-1/"
+  },
+  {
+   "title": "GPT-4 Technical Report",
+   "publisher": "arXiv (OpenAI)",
+   "url": "https://arxiv.org/abs/2303.08774"
+  },
+  {
+   "title": "Claude (language model)",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Claude_(language_model)"
+  },
+  {
+   "title": "Gemini (language model)",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Gemini_(language_model)"
+  },
+  {
+   "title": "Sarvam AI",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Sarvam_AI"
+  },
+  {
+   "title": "Ola launches Krutrim, AI model trained on Indian languages",
+   "publisher": "MediaNama",
+   "url": "https://www.medianama.com/2023/12/223-ola-krutrim-multilingual-indian-ai-model/"
+  },
+  {
+   "title": "NPCI launches new products; users can now make voice UPI payments",
+   "publisher": "YourStory",
+   "url": "https://yourstory.com/2023/09/npci-new-products-users-make-voice-upi-payments"
+  },
+  {
+   "title": "Launch of BharatGen: the first Government supported Multimodal Large Language Model Initiative",
+   "publisher": "Department of Science & Technology, Government of India",
+   "url": "https://dst.gov.in/launch-bharatgen-first-government-supported-multimodal-large-language-model-initiative"
+  },
+  {
+   "title": "Sarvam AI launches homegrown multilingual LLM, Sarvam-1",
+   "publisher": "YourStory",
+   "url": "https://yourstory.com/2024/10/sarvam-ai-launches-sarvam-1-indias-first-home-grown-multilingual-llm"
+  },
+  {
+   "title": "Sarvam to build India's sovereign large language model",
+   "publisher": "Sarvam AI",
+   "url": "https://www.sarvam.ai/blogs/indias-sovereign-llm"
+  },
+  {
+   "title": "AI Act enters into force",
+   "publisher": "European Commission",
+   "url": "https://commission.europa.eu/news-and-media/news/ai-act-enters-force-2024-08-01_en"
+  },
+  {
+   "title": "Artificial Intelligence Act",
+   "publisher": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Artificial_Intelligence_Act"
+  },
+  {
+   "title": "DeepSeek-V3 Technical Report",
+   "publisher": "arXiv",
+   "url": "https://arxiv.org/abs/2412.19437"
+  },
+  {
+   "title": "Measuring the environmental impact of AI inference",
+   "publisher": "Google Cloud Blog",
+   "url": "https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference"
+  },
+  {
+   "title": "Language Model Tokenizers Introduce Unfairness Between Languages (Petrov et al., 2023)",
+   "publisher": "arXiv / NeurIPS",
+   "url": "https://arxiv.org/abs/2305.15425"
+  },
+  {
+   "title": "PaLM: Scaling Language Modeling with Pathways (Chowdhery et al., 2022)",
+   "publisher": "arXiv",
+   "url": "https://arxiv.org/abs/2204.02311"
+  },
+  {
+   "title": "Scaling Language Models: Methods, Analysis & Insights from Training Gopher (Rae et al., 2021)",
+   "publisher": "arXiv",
+   "url": "https://arxiv.org/abs/2112.11446"
+  },
+  {
+   "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer (Raffel et al., 2019)",
+   "publisher": "arXiv",
+   "url": "https://arxiv.org/abs/1910.10683"
+  },
+  {
+   "title": "Llama 2: Open Foundation and Fine-Tuned Chat Models (Touvron et al., 2023)",
+   "publisher": "arXiv",
+   "url": "https://arxiv.org/abs/2307.09288"
+  }
+ ]
+}
